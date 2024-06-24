@@ -1,4 +1,4 @@
-import { Text } from "@/components/Text";
+import { Text } from "@/src/components/Text";
 
 interface ILabel {
     text?: string;

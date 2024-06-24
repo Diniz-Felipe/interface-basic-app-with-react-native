@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { ItemContainer } from "@/components/ListItem/styled";
+import { ItemContainer } from "@/src/components/ListItem/styled";
 
 interface IItemContainer {
     children: ReactNode;

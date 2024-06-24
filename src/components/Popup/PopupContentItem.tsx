@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import * as S from '@/components/Popup/styled';
+import * as S from '@/src/components/Popup/styled';
 
 interface IPopupContentItem{ 
     onPress?:() => void; 

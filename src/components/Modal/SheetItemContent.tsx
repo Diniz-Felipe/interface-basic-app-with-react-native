@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemContainer } from '@/components/Modal/styled';
+import { ItemContainer } from '@/src/components/Modal/styled';
 
 interface SheetItemContentProps {
     children: React.ReactNode

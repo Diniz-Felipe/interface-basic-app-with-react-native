@@ -1,11 +1,11 @@
-import { PopupRoot } from "@/components/Popup/PopupRoot";
-import { PopupContentItem } from "@/components/Popup/PopupContentItem";
+import { PopupRoot } from "@/src/components/Popup/PopupRoot";
+import { PopupContentItem } from "@/src/components/Popup/PopupContentItem";
 
-import { PopupCheck } from "@/components/Popup/PopupCheck";
-import { PopupActions } from "@/components/Popup/PopupActions";
-import { PopupAction } from "@/components/Popup/PopupAction";
-import { PopupText } from "@/components/Popup/PopupText";
-import { PopupIcon } from "@/components/Popup/PopupIcon";
+import { PopupCheck } from "@/src/components/Popup/PopupCheck";
+import { PopupActions } from "@/src/components/Popup/PopupActions";
+import { PopupAction } from "@/src/components/Popup/PopupAction";
+import { PopupText } from "@/src/components/Popup/PopupText";
+import { PopupIcon } from "@/src/components/Popup/PopupIcon";
 
 export const Popup = {
     Root: PopupRoot,

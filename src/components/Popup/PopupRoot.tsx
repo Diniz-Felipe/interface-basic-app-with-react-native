@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Container } from '@/components/Popup/styled';
+import { Container } from '@/src/components/Popup/styled';
 
 interface IPopupRoot {
     children: ReactNode;

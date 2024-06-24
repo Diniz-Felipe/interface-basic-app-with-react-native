@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from "@/components/Text";
+import { Text } from "@/src/components/Text";
 
 interface IListItemContent {
     text?: string | number;

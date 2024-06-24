@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Content } from '@/components/Button/styled';
+import { Content } from '@/src/components/Button/styled';
 
 interface IRoot {
     children: ReactNode;

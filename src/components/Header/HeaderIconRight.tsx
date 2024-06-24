@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Button } from '@/components/Button';
+import { Button } from '@/src/components/Button';
 
 interface IIconRight {
     onPress: () => void;

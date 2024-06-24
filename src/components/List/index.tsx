@@ -1,6 +1,6 @@
 import React from 'react';
-import * as S from '@/components/List/styled';
-import {ItemSeparatorComponent} from '@/components/List/ItemSeparatorComponent';
+import * as S from '@/src/components/List/styled';
+import {ItemSeparatorComponent} from '@/src/components/List/ItemSeparatorComponent';
 
 type RenderItemElement = (item: any) => React.JSX.Element;
 

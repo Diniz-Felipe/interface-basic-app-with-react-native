@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Touchable } from '@/components/Button/styled';
+import { Touchable } from '@/src/components/Button/styled';
 
 interface IAction {
   onPress: () => void;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderContainer } from '@/components/Modal/styled';
+import { HeaderContainer } from '@/src/components/Modal/styled';
 
 interface SheetContainerHeaderProps {
     children: React.ReactNode

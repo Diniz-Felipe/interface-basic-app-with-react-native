@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import { Profile } from '@/components/Header/styled';
-import { Button } from '@/components/Button';
+import { Profile } from '@/src/components/Header/styled';
+import { Button } from '@/src/components/Button';
 
 interface IProfile {
     image: string;

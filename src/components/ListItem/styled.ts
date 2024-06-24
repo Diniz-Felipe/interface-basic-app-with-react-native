@@ -12,7 +12,7 @@ export const ListItem = styled.TouchableOpacity`
     align-items: center;
     background-color: #ddd;
     padding: 5px;
-    margin: 5px;
+    /* margin: 5px; */
     gap: 20px;
     border-radius: 7px;
 `;

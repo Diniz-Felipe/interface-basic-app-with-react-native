@@ -1,7 +1,7 @@
-import {Root} from "@/components/Form/Root";
-import {Input} from "@/components/Form/TextInput";
-import {Error} from "@/components/Form/Error";
-import {Label} from "@/components/Form/Label";
+import {Root} from "@/src/components/Form/Root";
+import {Input} from "@/src/components/Form/TextInput";
+import {Error} from "@/src/components/Form/Error";
+import {Label} from "@/src/components/Form/Label";
 
 // interface IForm {
 //     Root?: () => React.JSX.Element;

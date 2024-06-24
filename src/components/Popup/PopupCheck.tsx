@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckBox } from '@/components/Popup/styled';
+import { CheckBox } from '@/src/components/Popup/styled';
 
 interface PopupCheckProps {
 

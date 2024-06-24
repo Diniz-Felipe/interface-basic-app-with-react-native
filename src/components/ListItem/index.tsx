@@ -1,8 +1,8 @@
-import { ListItemRoot } from '@/components/ListItem/ListItemRoot';
-import { ListItemIcon } from '@/components/ListItem/ListItemIcon';
-import { ListItemContent } from '@/components/ListItem/ListItemContent';
-import { ListItemCheck } from '@/components/ListItem/ListItemCheck';
-import { ListItemContainer } from '@/components/ListItem/ListItemContainer';
+import { ListItemRoot } from '@/src/components/ListItem/ListItemRoot';
+import { ListItemIcon } from '@/src/components/ListItem/ListItemIcon';
+import { ListItemContent } from '@/src/components/ListItem/ListItemContent';
+import { ListItemCheck } from '@/src/components/ListItem/ListItemCheck';
+import { ListItemContainer } from '@/src/components/ListItem/ListItemContainer';
 
 export const ListItem = {
     Root: ListItemRoot,

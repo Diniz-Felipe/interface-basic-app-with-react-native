@@ -1,6 +1,6 @@
 import React from 'react';
 import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
-import { TextInput } from '@/components/Form/styled';
+import { TextInput } from '@/src/components/Form/styled';
 
 interface ITextInputProps {
     placeholder?: string;

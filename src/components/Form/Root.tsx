@@ -1,4 +1,4 @@
-import { Container } from "@/components/Form/styled";
+import { Container } from "@/src/components/Form/styled";
 
 interface IRoot {
     children?: React.ReactNode;

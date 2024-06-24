@@ -1,8 +1,8 @@
-import { ButtonRoot } from '@/components/Button/ButtonRoot';
-import { ButtonContent } from '@/components/Button/ButtonContent';
-import { ButtonIcon } from '@/components/Button/ButtonIcon';
-import { ButtonActions } from '@/components/Button/ButtonActions';
-import { ButtonAction } from '@/components/Button/ButtonAction';
+import { ButtonRoot } from '@/src/components/Button/ButtonRoot';
+import { ButtonContent } from '@/src/components/Button/ButtonContent';
+import { ButtonIcon } from '@/src/components/Button/ButtonIcon';
+import { ButtonActions } from '@/src/components/Button/ButtonActions';
+import { ButtonAction } from '@/src/components/Button/ButtonAction';
 
 export const Button = {
     Root: ButtonRoot,

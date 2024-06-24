@@ -1,7 +1,7 @@
 import React from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
-import { Text } from '@/components/Text';
+import { Text } from '@/src/components/Text';
 
 interface IPopupAction {
     icon: any;

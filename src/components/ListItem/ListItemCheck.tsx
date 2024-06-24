@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Switch } from "@/components/ListItem/styled";
+import { Container, Switch } from "@/src/components/ListItem/styled";
 
 interface ListItemCheckProps {
     text?: string;

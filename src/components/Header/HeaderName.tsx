@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Text } from '@/components/Text';
+import { Text } from '@/src/components/Text';
 import { useRoute } from "@react-navigation/native";
 
 interface IName {};
