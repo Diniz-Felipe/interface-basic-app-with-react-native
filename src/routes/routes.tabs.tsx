@@ -7,7 +7,6 @@ import { SearchScreen } from "@/src/screens/Search";
 import { Header } from "@/src/components/Header";
 import { useNavigation } from "expo-router";
 import { LoginScreen } from "../screens/Login";
-import { InitialScreen } from "../screens/Initial";
 import { useUtils } from "@/src/components/utils";
 import { RegisterScreen } from "../screens/Register";
 
@@ -15,13 +14,16 @@ const Tabs = createBottomTabNavigator();
 
 export const TabsRoutes = () => {
     const navigation = useNavigation();
-    const { navigationTo } = useUtils()
-    return <Tabs.Navigator 
-    initialRouteName="Home"
-    screenOptions={{
-        tabBarStyle: { height: 70 },
-        tabBarShowLabel: false,
-    }}>
+    const { navigationTo } = useUtils();
+
+    return <Tabs.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+            tabBarStyle: { 
+                height: 70 
+            },
+            tabBarShowLabel: false,
+        }}>
         <Tabs.Screen
             name="Home"
             component={HomeScreen}
@@ -30,7 +32,7 @@ export const TabsRoutes = () => {
                     <Header.Root>
                         <Header.Name />
                         <Header.IconRight color="#444" size={20}
-                            onPress={() => navigation.navigate("Settings" as never)} 
+                            onPress={() => navigation.navigate("Settings" as never)}
                             icon="settings" />
                     </Header.Root>
                 ),
@@ -39,6 +41,7 @@ export const TabsRoutes = () => {
                 ),
             }}
         />
+
         <Tabs.Screen
             name="Search"
             component={SearchScreen}
@@ -111,19 +114,5 @@ export const TabsRoutes = () => {
                 ),
             }}
         />
-        {/* <Tabs.Screen
-            name="Initial"
-            component={InitialScreen}
-            options={{
-                header: () => (
-                    <Header.Root>
-                        <Header.Name />
-                    </Header.Root>
-                ),
-                tabBarIcon: ({ color, focused }) => (
-                    <TabBarIcon name={focused ? 'settings' : 'settings-outline'} color={color} />
-                ),
-            }}
-        /> */}
     </Tabs.Navigator>
 };

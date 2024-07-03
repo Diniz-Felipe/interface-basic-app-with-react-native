@@ -4,4 +4,4 @@ export default function Index() {
   return (
     <AppProvider />
   );
-};
+}; 

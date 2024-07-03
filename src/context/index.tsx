@@ -1,10 +1,18 @@
-import { TabsRoutes } from "../routes/routes.tabs";
-import {AuthProvider} from '@/src/context/auth'
+import React from "react";
+import { InitialSplashScreen } from "../screens/Initial-Splash";
+import { useState } from "react";
+import { Routes } from "../routes";
+import { preventAutoHideAsync } from "expo-splash-screen";
+
+preventAutoHideAsync();
 
 export const AppProvider = () => {
+    const [splashComplete, setSplashComplete] = useState(false);
+
     return (
-        <AuthProvider>
-            <TabsRoutes />
-        </AuthProvider>
+        splashComplete 
+        ?  <Routes />
+
+        :  <InitialSplashScreen onComplete={setSplashComplete} />
     );
 };
