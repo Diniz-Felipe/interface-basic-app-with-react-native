@@ -6,9 +6,7 @@ interface SheetItemContentProps {
 };
 
 export const SheetItemContent = ({children}: SheetItemContentProps)=> {
-    return (
-        <ItemContainer>
-            {children}
-        </ItemContainer>
-    );
+    return <ItemContainer>
+        {children}
+    </ItemContainer>
 };

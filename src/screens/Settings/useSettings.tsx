@@ -3,33 +3,37 @@ import { Text } from '@/src/components/Text';
 import { ListItem } from '@/src/components/ListItem';
 import { ISectionsData } from '@/src/components/SectionList';
 
-const DATA: ISectionsData[] = [
-    {
-      title: 'Theme',
-      data: ["'Pizza', 'Burger', 'Risotto'"],
-    },
-    {
-      title: 'Ontem',
-      data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-    },
-    {
-      title: '5 Dias.',
-      data: ['Water', 'Coke', 'Beer'],
-    },
-    {
-      title: '30 Dias',
-      data: ['Cheese Cake', 'Ice Cream'],
-    },
+export interface DataProps extends ISectionsData {};
+
+const DATA: DataProps[] = [
+  {
+    title: 'Geral',
+    data: ['Pizza', 'Burger', 'Risotto'],
+  },
+  {
+    title: 'Conexões',
+    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+  },
+  {
+    title: 'Themas',
+    data: ['Water', 'Coke', 'Beer'],
+  },
+  {
+    title: 'Outros',
+    data: ['Cheese Cake', 'Ice Cream'],
+  },
 ];
 
-const RenderSectionHeader = ({ title }: ISectionsData) => <Text medium>{"title"}</Text>
+const RenderSectionHeader = (section: DataProps) => <Text medium>{section.title}</Text>
 
-const RenderNotificationsItem = () => (
-  <ListItem.Root action={() => console.log("test noti...")}>
-    <ListItem.Content text={"Theme"} />
+const handleNextSettings = () => {};
+
+const RenderSettingsItem = (item: DataProps) => (
+  <ListItem.Root action={handleNextSettings}>
+    <ListItem.Content text={item} />
   </ListItem.Root>
 );
 
 export const useSettings = () => {
-  return {RenderNotificationsItem, RenderSectionHeader, DATA}
-}
+  return {RenderSettingsItem, RenderSectionHeader, DATA}
+};

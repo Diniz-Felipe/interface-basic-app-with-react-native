@@ -5,10 +5,6 @@ interface SheetTextProps {
     text?: string
 };
 
-export const SheetText = ({ text }: SheetTextProps) => {
-    return (
-        <Text medium>
-            {text}
-        </Text>
-    );
-};
+export const SheetText = ({ text }: SheetTextProps) => { 
+    return <Text medium>{text}</Text> 
+}

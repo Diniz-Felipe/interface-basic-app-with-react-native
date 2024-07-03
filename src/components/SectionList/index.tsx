@@ -14,15 +14,15 @@ interface ISectionList {
     sections: ISectionsData[];
 };
 
-export const SectionList = ({ renderItem, sections, renderSectionHeader ,...rest }: ISectionList) => {
+export const SectionList = ({ renderItem, sections, renderSectionHeader , ...sectionProps }: ISectionList) => {
     return (
         <S.SectionList
             sections={sections}
             showsVerticalScrollIndicator={false}
             ItemSeparatorComponent={S.ItemSeparatorComponent}
-            renderSectionHeader={renderSectionHeader}
-            renderItem={({section}) => renderItem(section)}
-            {...rest}
+            renderSectionHeader={({section}) => renderSectionHeader(section)}
+            renderItem={({ item }) => renderItem(item)}
+            {...sectionProps}
         />
     );
 };

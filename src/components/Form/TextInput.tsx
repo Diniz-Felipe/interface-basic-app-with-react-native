@@ -24,7 +24,7 @@ export function Input <TypeForm extends FieldValues> ({
                 {...inputProps}
                 onBlur={onBlur}
                 onChangeText={onChange}
-                value={value}  
+                value={value}
             />
         )}
     />

@@ -9,6 +9,7 @@ import { useNavigation } from "expo-router";
 import { LoginScreen } from "../screens/Login";
 import { InitialScreen } from "../screens/Initial";
 import { useUtils } from "@/src/components/utils";
+import { RegisterScreen } from "../screens/Register";
 
 const Tabs = createBottomTabNavigator();
 
@@ -59,7 +60,7 @@ export const TabsRoutes = () => {
                 header: () => (
                     <Header.Root>
                         <Header.Name />
-                        <Header.IconRight color="#444" size={20} onPress={() => ""} icon="settings" />
+                        <Header.IconRight color="#444" size={20} onPress={() => navigation.navigate('Settings' as never)} icon="settings" />
                     </Header.Root>
                 ),
                 tabBarIcon: ({ color, focused }) => (
@@ -74,7 +75,7 @@ export const TabsRoutes = () => {
                 header: () => (
                     <Header.Root>
                         <Header.Name />
-                        <Header.IconRight color="#444" size={20} onPress={() => navigation.navigate("Settings" as never)} icon="log-out-outline" />
+                        <Header.IconRight color="#444" size={20} onPress={() => navigation.navigate("Login" as never)} icon="log-out-outline" />
                     </Header.Root>
                 ),
                 tabBarIcon: ({ color, focused }) => (
@@ -85,6 +86,20 @@ export const TabsRoutes = () => {
         <Tabs.Screen
             name="Login"
             component={LoginScreen}
+            options={{
+                header: () => (
+                    <Header.Root>
+                        <Header.Name />
+                    </Header.Root>
+                ),
+                tabBarIcon: ({ color, focused }) => (
+                    <TabBarIcon name={focused ? 'settings' : 'settings-outline'} color={color} />
+                ),
+            }}
+        />
+        <Tabs.Screen
+            name="Register"
+            component={RegisterScreen}
             options={{
                 header: () => (
                     <Header.Root>

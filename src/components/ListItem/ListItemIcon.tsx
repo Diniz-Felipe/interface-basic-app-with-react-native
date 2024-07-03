@@ -6,13 +6,13 @@ interface IListItemIcon {
     size?: number;
     color?: string;
     icon?: ElementType;
-    name?: any;
+    name?: keyof typeof Ionicons.glyphMap;
 };
 
-export const ListItemIcon = ({ name, size, color }: IListItemIcon) => (
+export const ListItemIcon = ({ name, size = 24, color = '#555' }: IListItemIcon) => (
     <Ionicons 
         name={name} 
-        size={size || 24} 
+        size={size} 
         color={color} 
     />
 );

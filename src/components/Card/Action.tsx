@@ -5,10 +5,9 @@ interface IAction {
     onPress: () => void;
 };
 
-export const Action = ({ onPress, children }: IAction) => { 
-    return (
-        <S.Action onPress={onPress}>
-            {children}
-        </S.Action>
-    );
+export const Action = ({ onPress, children }: IAction) => {
+    return <S.Action onPress={onPress}>
+        {children}
+    </S.Action>
+
 };

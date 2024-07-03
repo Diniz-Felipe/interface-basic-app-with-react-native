@@ -1,4 +1,3 @@
-import React from "react";
 import { RenderSearchItem } from "./RenderSearchItem";
 
 export interface IData {
@@ -8,19 +7,37 @@ export interface IData {
     imageURL: string;
 };
 
-const URL = "https://jsonplaceholder.typicode.com/todos/10"
+const URL = "https://jsonplaceholder.typicode.com/todos/10";
 
-const DATA = [
+const DATA: IData[] = [
     {
         id: 1,
-        name: "Felipe",
-        description: `Desc`,
+        name: "DZ7",
+        description: "test",
         imageURL: "imageURl",
     },
     {
         id: 2,
-        name: "Felipe",
-        description: "Desc",
+        name: "Abacaxi",
+        description: "test",
+        imageURL: "imageURL",
+    },
+    {
+        id: 3,
+        name: "Pera",
+        description: "test",
+        imageURL: "imageURL",
+    },
+    {
+        id: 4,
+        name: "Açucar",
+        description: "test",
+        imageURL: "imageURL",
+    },
+    {
+        id: 5,
+        name: "k.o",
+        description: "",
         imageURL: "imageURL",
     },
 ]
@@ -29,15 +46,11 @@ const actionSearchItem = () => {
     console.info('textue')
 }
 
-// const fetchSearchAxios = async (): Promise<IData> => {
-//     const response = await axios.get(URL)
-//     console.log( response.data)
-//     // return response.data
-//     const DATA = response.data;
-//     return DATA;
-// }
-
 export const useSearch = () => {
 
-    return { RenderSearchItem, DATA, actionSearchItem }
+    return { 
+        RenderSearchItem, 
+        DATA, 
+        actionSearchItem
+    }
 };

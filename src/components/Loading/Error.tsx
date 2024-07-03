@@ -4,7 +4,6 @@ import { ContentError } from './styled';
 
 export const Error = () => {
   return <ContentError>
-      <Text medium>Error</Text>
-    </ContentError>
-}
-
+    <Text medium>Error</Text>
+  </ContentError>
+};

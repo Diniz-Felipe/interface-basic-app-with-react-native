@@ -1,0 +1,1 @@
+new Error('Ops, algo deu errado');

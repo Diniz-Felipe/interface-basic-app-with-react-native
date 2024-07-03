@@ -1,5 +1,9 @@
 import styled from "styled-components/native"
 
+export const Modal = styled.Modal`
+    
+`;
+
 export const Wrapper = styled.View`
     border-width: 1px;
     /* 

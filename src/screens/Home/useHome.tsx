@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const DATA = [
     {
@@ -14,5 +14,5 @@ export const DATA = [
 ]
 
 export const useHome =()=> {
-  return {DATA}
-}
+  return { DATA };
+};

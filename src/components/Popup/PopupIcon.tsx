@@ -2,7 +2,7 @@ import React from "react";
 import { Ionicons } from '@expo/vector-icons';
 
 interface IPopupIcon {
-    name: any;
+    name: keyof typeof Ionicons.glyphMap;
     size: number;
     color: string;
 };

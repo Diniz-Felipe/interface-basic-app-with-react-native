@@ -1,14 +1,12 @@
 import React from "react";
-import { ElementType } from "react";
 import { Ionicons } from '@expo/vector-icons/';
 
 interface SheetIconProps {
-    name?: any
-    size?: number
-    color?: string
-    icon?: ElementType
+    name: keyof typeof Ionicons.glyphMap;
+    size: number;
+    color: string;
 };
 
-export const SheetIcon = ({ icon: Icon, name, size, color }: SheetIconProps) => (
-    <Ionicons name={name} size={size || 24} color={color} />
+export const SheetIcon = ({ name, size = 24, color = '#555' }: SheetIconProps) => (
+    <Ionicons name={name} size={size} color={color} />
 );

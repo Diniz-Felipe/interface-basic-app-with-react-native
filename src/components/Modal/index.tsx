@@ -7,6 +7,8 @@ import { SheetItemContent } from '@/src/components/Modal/SheetItemContent';
 import { SheetText } from '@/src/components/Modal/SheetText';
 import { SheetIcon } from '@/src/components/Modal/SheetIcon';
 import { SheetActions } from '@/src/components/Modal/SheetActions';
+import { SheetPortal } from '@/src/components/Modal/SheetPortal';
+import { SheetModal } from '@/src/components/Modal/SheetModal';
 
 export const ModalSheet = {
   Root: SheetRoot,
@@ -16,6 +18,8 @@ export const ModalSheet = {
   Text: SheetText,
   Icon: SheetIcon, 
   Actions: SheetActions,
+  Modal: SheetModal,
+  Portal: SheetPortal,
   // TimeLine: SheetTimeLine
   // Check: SheetCheck
   // etc.

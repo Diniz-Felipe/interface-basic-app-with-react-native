@@ -1,9 +1,11 @@
 import React from 'react';
-import { ISectionsData } from '@/components/SectionList';
-import { ListItem } from '@/components/ListItem';
-import { Text } from '@/components/Text';
+import { ISectionsData } from '@/src/components/SectionList';
+import { ListItem } from '@/src/components/ListItem';
+import { Text } from '@/src/components/Text';
 
-const DATA: ISectionsData[] = [
+export interface DataProps extends ISectionsData {}
+
+const DATA: DataProps[] = [
   {
     title: 'Hoje',
     data: ['Pizza', 'Burger', 'Risotto'],
@@ -22,11 +24,13 @@ const DATA: ISectionsData[] = [
   },
 ];
 
-const RenderSectionHeader = ({ title }: ISectionsData) => <Text medium>{title}</Text>
+const RenderSectionHeader = (section: DataProps) =>  <Text medium>{section.title}</Text>
 
-const RenderNotificationsItem = () => (
-  <ListItem.Root action={() => console.log("test noti...")}>
-    <ListItem.Content text="text1" />
+const handleNextNotifications = () => {};
+
+const RenderNotificationsItem = (item: DataProps) => (
+  <ListItem.Root action={handleNextNotifications}>
+    <ListItem.Content text={item} />
   </ListItem.Root>
 );
 

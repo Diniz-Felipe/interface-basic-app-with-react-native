@@ -13,5 +13,5 @@ export const RenderSearchItem = ({ id, name, description, imageURL }: IData) => 
                 <ListItem.Content text={description} />
             </ListItem.ItemContainer>
         </ListItem.Root>
-    )
+    );
 };

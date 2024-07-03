@@ -6,9 +6,7 @@ interface SheetContentContainerProps {
 };
 
 export const SheetContentContainer = ({ children }: SheetContentContainerProps) => {
-    return (
-        <ContentContainer>
-            {children}
-        </ContentContainer>
-    );
+    return    <ContentContainer>
+        {children}
+    </ContentContainer>
 };

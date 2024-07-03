@@ -1,18 +1,25 @@
 import React from 'react';
+import { useSettings } from '@/src/screens/Settings/useSettings';
 import { Container } from './styled';
 import { SectionList } from '@/src/components/SectionList';
-import { useSettings } from './useSettings';
 
 export const SettingsScreen = () => {
-  const { RenderNotificationsItem, 
-    RenderSectionHeader, DATA 
+  const { 
+    RenderSettingsItem, 
+    RenderSectionHeader, 
+    DATA 
   } = useSettings();
 
-  return <Container>
-    <SectionList 
-      sections={DATA} 
-      renderItem={RenderNotificationsItem} 
-      renderSectionHeader={RenderSectionHeader} 
-    />
-  </Container>
-}
+  return (
+    <Container>
+      {/* condition */}
+      {
+        <SectionList
+          sections={DATA}
+          renderSectionHeader={RenderSectionHeader}
+          renderItem={RenderSettingsItem}
+        />
+      }
+    </Container>
+  );
+};

@@ -6,9 +6,8 @@ interface IItemContainer {
 };
 
 export const ListItemContainer = ({ children }: IItemContainer) => {
-    return (
-        <ItemContainer>
-            {children}
-        </ItemContainer>
-    );
+    return <ItemContainer>
+        {children}
+    </ItemContainer>
+
 };

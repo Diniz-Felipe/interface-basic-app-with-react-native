@@ -6,9 +6,7 @@ interface IRoot {
 };
 
 export const Root = ({ children }: IRoot) => {
-  return (
-    <Container>
-        {children}
-    </Container>
-  );
+  return <Container>
+    {children}
+  </Container>
 };

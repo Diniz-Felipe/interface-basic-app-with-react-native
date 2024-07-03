@@ -6,9 +6,7 @@ interface SheetContainerHeaderProps {
 };
 
 export const SheetContainerHeader = ({ children }: SheetContainerHeaderProps) => {
-    return (
-        <HeaderContainer>
-            {children}
-        </HeaderContainer>
-    );
+    return <HeaderContainer>
+        {children}
+    </HeaderContainer>
 };

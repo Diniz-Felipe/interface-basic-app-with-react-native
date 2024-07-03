@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { Wrapper } from './styled';
+import React, { ReactNode, } from 'react';
+import { PaperProvider } from 'react-native-paper';
 
 type SheetProps = {
     children: ReactNode;
@@ -7,8 +7,8 @@ type SheetProps = {
 
 export const SheetRoot = ({ children }: SheetProps) => {
     return (
-        <Wrapper>
+        <PaperProvider>
             {children}
-        </Wrapper>
+        </PaperProvider>
     );
 };

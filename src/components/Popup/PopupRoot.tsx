@@ -6,9 +6,7 @@ interface IPopupRoot {
 };
 
 export const PopupRoot = ({ children }: IPopupRoot) => {
-    return (
-        <Container>
-            {children}
-        </Container>
-    );
-};
+    return <Container>
+        {children}
+    </Container>
+}
