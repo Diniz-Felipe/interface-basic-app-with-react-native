@@ -1,18 +1,16 @@
 import React from "react";
-import { InitialSplashScreen } from "../screens/Initial-Splash";
-import { useState } from "react";
 import { Routes } from "../routes";
-import { preventAutoHideAsync } from "expo-splash-screen";
+import { ThemeProvider } from "styled-components/native";
 
-preventAutoHideAsync();
+import { theme } from "../theme";
+import { AuthProvider } from "./auth";
 
 export const AppProvider = () => {
-    const [splashComplete, setSplashComplete] = useState(false);
-
     return (
-        splashComplete 
-        ?  <Routes />
-
-        :  <InitialSplashScreen onComplete={setSplashComplete} />
+        <ThemeProvider theme={theme}>
+            <AuthProvider>
+                <Routes />
+            </AuthProvider>
+        </ThemeProvider>
     );
 };

@@ -1,7 +1,7 @@
-import { AppProvider } from "@/src/context";
+import { Layout } from "@/src/layout";
 
 export default function Index() {
   return (
-    <AppProvider />
+    <Layout />
   );
 }; 
