@@ -13,7 +13,7 @@ export const InitialSplashScreen = ({ onComplete }: InitialSplashProps) => {
   const [lastStatus, setStatus] = useState<AVPlaybackStatus>({} as AVPlaybackStatus);
 
   const onPlaybackStatusUpdate = (status: AVPlaybackStatus) => {
-    console.log(status);
+    //console.log(status);
 
     if (status.isLoaded) {
       if (lastStatus.isLoaded !== status.isLoaded) {

@@ -5,14 +5,16 @@ import { Card } from '@/src/components/Card';
 import { ListItem } from '@/src/components/ListItem';
 import { List } from '@/src/components/List';
 
-import { Wrapper, Container } from './styled';
-import { RenderItemHome } from './RenderItemHome';
-import { DATA } from './useHome';
+import { Wrapper, Container } from '@/src/screens/Home/styled';
+import { RenderItemHome } from '@/src/screens/Home/RenderItemHome';
+import { DATA } from '@/src/screens/Home/useHome';
+import { useAuth } from '@/src/context/auth';
 
 export const HomeScreen = () => {
+  const { data, isError, isLoading } = useAuth();
   return (
     <Wrapper>
-      <Text>Card's</Text>
+      <Text>{data?.data.title}</Text>
       <Container>
         <Card.Root>
           <Card.Icon color='#444' size={30} name="finger-print-outline" />

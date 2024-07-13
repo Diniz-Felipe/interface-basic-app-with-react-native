@@ -1,25 +1,27 @@
 import { useForm } from 'react-hook-form';
-import {zodResolver} from '@hookform/resolvers/zod'
+import {zodResolver} from '@hookform/resolvers/zod';
 import {z, ZodError} from 'zod';
 
-const schema = z.object({
-    name: z.string(),
+const defaultSchema = z.object({
+    name: z.string().optional(),
     password: z.string().min(6, 'minimo 6 caractere'),
     email: z.string().min(6, 'minimo 6 caractere')
 })
 
-type TypeForm = z.infer<typeof schema>;
+type TypeForm = z.infer<typeof defaultSchema>;
 
-export const useFormHooks = () => {
+export const useFormHooks = (customSchema?: z.ZodSchema<TypeForm>) => {
+    const schemaToUse = customSchema || defaultSchema;
+
     const { handleSubmit, register, control, formState: { errors, defaultValues  }, } = useForm<TypeForm>({
         mode: 'all',
         reValidateMode: 'onChange',
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schemaToUse)
     });
     
     const onSubmit = (data: TypeForm) => {
         try {
-            const result = schema.parse(data)
+            const result = schemaToUse.parse(data)
 
             console.log({result})
         } catch (error) {
@@ -33,58 +35,8 @@ export const useFormHooks = () => {
         handleSubmit, 
         onSubmit, 
         control, 
-    register, errors, defaultValues}
-
-    // return (
-    //     <Form.Root>
-    //         <Form.TextInput 
-    //             {...register('name')}
-    //             control={control}
-    //             placeholder='name'
-    //             name='name'
-    //             errorMessage={errors.name?.message}
-    //         />
-    //         <Form.TextInput 
-    //             {...register('password')}
-    //             name='password'
-    //             control={control}
-    //             placeholder='name'
-    //             errorMessage={errors.name?.message}
-    //         />
-    //     </Form.Root>
-    // );
+        register, 
+        errors, 
+        defaultValues
+    }
 };
-// import { zodResolver } from 'react-hook-form';
-
-// type ILogin = { 
-//     Email: string; 
-//     Password: string 
-// };
-
-// type IRegister = { 
-//     Name: string; 
-//     Email: string; 
-//     Password: string;
-// };
-
-// export type TypeForm = {
-//     register: IRegister;
-//     login: ILogin;
-// };
-
-// export const useFormHook = () => {
-//     const { formState: { errors, defaultValues  }, register, } = useForm<TypeForm>();
-
-//     const error = () => console.log(`Email errors', ${errors?.login?.Email}`)
-
-//     // useEffect(() => {
-//     //     console.log(`Email errors', ${errors?.Email}`)
-//     // }, [errors?.Email]);
-    
-//     const onSubmit = () => console.log(
-//         defaultValues?.login?.Email,
-//         defaultValues?.login?.Password
-//     )
-
-//     return { onSubmit, error };
-// };

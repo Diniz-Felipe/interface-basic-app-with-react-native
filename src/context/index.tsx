@@ -1,16 +1,18 @@
 import React from "react";
 import { Routes } from "../routes";
 import { ThemeProvider } from "styled-components/native";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { theme } from "../theme";
-import { AuthProvider } from "./auth";
+
+const queryClient = new QueryClient();
 
 export const AppProvider = () => {
     return (
-        <ThemeProvider theme={theme}>
-            <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+            <ThemeProvider theme={theme}>
                 <Routes />
-            </AuthProvider>
-        </ThemeProvider>
+            </ThemeProvider>
+        </QueryClientProvider>
     );
 };

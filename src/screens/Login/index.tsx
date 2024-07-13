@@ -4,6 +4,12 @@ import { Container } from './styled';
 import { Button } from '@/src/components/Button';
 import { Text } from '@/src/components/Text';
 import { useFormHooks } from '@/src/components/Form/useCases';
+import { z } from 'zod';
+
+const loginSchema = z.object({
+  email: z.string().min(6, 'caractere'),
+  password: z.string().min(6, 'caractere'),
+})
 
 export const LoginScreen = () => {
   const {
@@ -12,7 +18,7 @@ export const LoginScreen = () => {
     errors, 
     onSubmit, 
     defaultValues, 
-    register} = useFormHooks();
+    register} = useFormHooks(loginSchema);
 
   return (
     <Container>

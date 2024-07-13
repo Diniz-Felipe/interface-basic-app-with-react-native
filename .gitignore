@@ -21,5 +21,4 @@ expo-env.d.ts
 
 # interface
 .gitignore
-src/context/auth
 app
