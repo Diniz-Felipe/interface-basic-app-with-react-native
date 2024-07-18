@@ -13,7 +13,7 @@ export const RegisterScreen = () => {
     <Container>
       <Form.Root>
         <Form.TextInput
-          {...register('name')}
+          // {...register('name')}
           name='name'
           control={control}
           rules={{ required: 'Login Requerid' }}
@@ -23,7 +23,7 @@ export const RegisterScreen = () => {
         />
 
         <Form.TextInput
-          {...register('email')}
+          // {...register('email')}
           name='email'
 
           control={control}
@@ -34,7 +34,7 @@ export const RegisterScreen = () => {
         />
 
         <Form.TextInput
-          {...register('password')}
+          // {...register('password')}
           name='password'
 
           control={control}

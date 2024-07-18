@@ -11,14 +11,14 @@ import { DATA } from '@/src/screens/Home/useHome';
 import { useAuth } from '@/src/context/auth';
 
 export const HomeScreen = () => {
-  const { data, isError, isLoading } = useAuth();
+  const { data } = useAuth();
   return (
     <Wrapper>
-      <Text>{data?.data.title}</Text>
+      <Text>{data?.name}</Text>
       <Container>
         <Card.Root>
           <Card.Icon color='#444' size={30} name="finger-print-outline" />
-          <Card.Content text='@Felipe ooooh' />
+          <Card.Content text='test' />
           <Card.Content text='Hyper OS' />
         </Card.Root>
 
@@ -32,15 +32,16 @@ export const HomeScreen = () => {
       <ListItem.Root>
         <ListItem.Icon size={35} name="contrast-outline" color='#4444' />
         <ListItem.ItemContainer>
-        <ListItem.Content text="conected device" />
-        <ListItem.Content text="quick share" />
+          <ListItem.Content text="conected device" />
+          <ListItem.Content text="quick share" />
         </ListItem.ItemContainer>
       </ListItem.Root>
-      
-      <List 
-        data={DATA} 
-        renderItem={RenderItemHome} 
+
+      <List
+        data={DATA}
+        renderItem={RenderItemHome}
       />
+
     </Wrapper>
   );
 };

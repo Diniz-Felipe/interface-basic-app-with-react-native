@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from '../Text';
 
 interface IContent {
-    text: string;
+  text: string | any;
 };
 
 export const Content = ({ text }: IContent) => {

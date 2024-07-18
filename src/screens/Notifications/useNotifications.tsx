@@ -2,6 +2,7 @@ import React from 'react';
 import { ISectionsData } from '@/src/components/SectionList';
 import { ListItem } from '@/src/components/ListItem';
 import { Text } from '@/src/components/Text';
+import { ActivityIndicator } from 'react-native-paper';
 
 export interface DataProps extends ISectionsData {}
 
@@ -34,6 +35,8 @@ const RenderNotificationsItem = (item: DataProps) => (
   </ListItem.Root>
 );
 
+const Loading = () => <ActivityIndicator color='red' size='large' />
+
 export const useNotifications = () => {
-  return { RenderNotificationsItem, DATA, RenderSectionHeader };
+  return { RenderNotificationsItem, DATA, RenderSectionHeader, Loading };
 };

@@ -1,20 +1,26 @@
 import axios from "axios";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
-const url = 'https://jsonplaceholder.typicode.com/todos/107'//'http://localhost:4001/users';
+const URL = 'http://localhost:4001/authOne';
 
-const useAuth = () => {
-    const { data, isLoading, isError, isFetched } = useQuery({
-        queryKey: ['users'], // key 
-        queryFn: async () => await axios.get(url), // get Users
-        refetchInterval: 1000
+const getOne = async (id: string | number, url: string) => {
+    const { data, status } = await axios.get(`${url}/:${id}`);
+    const result = data
+    return result
+};
+
+const useAuth = (id?: string |  number) => {
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ['user', id], // key 
+        queryFn: () => getOne(URL, id = "2"), // get user
     });
-    
+    //console.log(data)
+
     return { 
         data,
         isLoading,
         isError
-    }
+    };
 };
 // netInfo & get users with axios 
 export { useAuth };

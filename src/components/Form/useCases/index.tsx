@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
-import {zodResolver} from '@hookform/resolvers/zod';
-import {z, ZodError} from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z, ZodError } from 'zod';
 
 const defaultSchema = z.object({
     name: z.string().optional(),
@@ -23,7 +23,7 @@ export const useFormHooks = (customSchema?: z.ZodSchema<TypeForm>) => {
         try {
             const result = schemaToUse.parse(data)
 
-            console.log({result})
+            console.log({ result })
         } catch (error) {
             if (error instanceof ZodError) {
                 console.warn(error.flatten())

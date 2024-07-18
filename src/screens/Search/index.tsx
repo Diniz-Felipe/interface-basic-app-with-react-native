@@ -8,13 +8,14 @@ import { List } from '@/src/components/List';
 import { useSearch } from './useSearch';
 import { IData } from './useSearch';
 import { Button } from '@/src/components/Button';
+import { RenderSearchItem } from './RenderSearchItem';
 
 // const Loading = "Busque.." //` busque profissionais cargos funções estágios; `
 
 export const SearchScreen = () => {
-  const { DATA, RenderSearchItem } = useSearch();
+  const { DATA } = useSearch();
   const { control, handleSubmit } = useForm();
-  const [filteredData, setFilteredData] = useState<IData[]>(DATA);
+  const [ filteredData, setFilteredData ] = useState<IData[]>(DATA);
 
   const filterData = (query: string) => {
     if (query) {

@@ -1,4 +1,4 @@
-import { RenderSearchItem } from "./RenderSearchItem";
+//import { RenderSearchItem } from "./RenderSearchItem";
 
 export interface IData {
     id: number | string;
@@ -49,7 +49,7 @@ const actionSearchItem = () => {
 export const useSearch = () => {
 
     return { 
-        RenderSearchItem, 
+        //RenderSearchItem, 
         DATA, 
         actionSearchItem
     }
