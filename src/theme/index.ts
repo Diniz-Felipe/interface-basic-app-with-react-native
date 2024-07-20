@@ -1,7 +1,4 @@
-import { Dark } from "./dark";
-import { Light } from "./light";
+import darkTheme from './dark';
+import lightTheme from './light';
 
-export const theme = {
-    light: Light,
-    dark: Dark,
-}
+export default { lightTheme, darkTheme }

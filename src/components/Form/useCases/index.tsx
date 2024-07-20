@@ -4,8 +4,10 @@ import { z, ZodError } from 'zod';
 
 const defaultSchema = z.object({
     name: z.string().optional(),
-    password: z.string().min(6, 'minimo 6 caractere'),
-    email: z.string().min(6, 'minimo 6 caractere')
+    password: z.string().min(6, 'minimo 6 caractere').optional(),
+    email: z.string().min(6, 'minimo 6 caractere').optional(),
+    // search query
+    search: z.string().optional(),
 })
 
 type TypeForm = z.infer<typeof defaultSchema>;

@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 type IThemedTextProps = {
     // type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle';
@@ -9,7 +9,9 @@ type IThemedTextProps = {
 };
 
 export const Text = styled.Text<IThemedTextProps>`
-    color: #555;
+    ${() => css`
+        color: ${({ theme }) => theme.colors.onBackground};
+    `};
     ${({ title, large, medium, small }: IThemedTextProps) => {
         switch (true) {
             case title:

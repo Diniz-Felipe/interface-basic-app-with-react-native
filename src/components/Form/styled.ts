@@ -1,19 +1,20 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-    /* flex-direction: row; */
     gap: 10px;
 `;
 
 export const TextInput = styled.TextInput`
-    height: 65px;
-    min-width: 82%;
+    ${() => css`
+        height: 65px;
+        min-width: 82%;
+        
+        background-color: ${({ theme }) => theme.colors.secundary};
 
-    /* margin: 5px; */
-    padding: 10px;
-    background-color: #eee;
-
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: #ddd;
+        padding: 10px;
+        
+        border-width: 1px;
+        border-radius: ${({ theme }) => theme.radius.medium}px;
+        border-color: #ddd; 
+    `}
 `;

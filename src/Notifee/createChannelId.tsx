@@ -3,7 +3,7 @@ import notifee, { AndroidImportance } from "@notifee/react-native";
 const createChannelId = async () => {
 
     const channelId = await notifee.createChannel({
-      id: 'test',
+      id: '17',
       name: 'sales',
       vibration: true,
       importance: AndroidImportance.HIGH

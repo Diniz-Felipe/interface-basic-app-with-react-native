@@ -1,7 +1,10 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Container =  styled.SafeAreaView` 
-    flex: 1;
-    padding: 10px;
-    padding-bottom: 10px;
+    ${() => css`
+        flex: 1;
+        padding: ${({theme}) => theme.spaces.small}px;
+        padding-bottom: ${({theme}) => theme.spaces.small}px;
+        background-color: ${({theme}) => theme.colors.background};
+    `}
 `;

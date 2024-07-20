@@ -1,12 +1,18 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Container = styled.View`
-    flex-direction: row;
-    height: 100px;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
+    ${() => css`
+        height: ${({ theme }) => theme.height.default}px;
+        
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        background-color: ${({ theme }) => theme.colors.background};
+
+        padding-left: ${({ theme }) => theme.spaces.medium}px; 
+        padding-right: ${({ theme }) => theme.spaces.medium}px;
+    `}
 `;
 export const Profile = styled.Image`
 `;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 
 import { Form } from '@/src/components/Form';
 
@@ -9,13 +8,14 @@ import { useSearch } from './useSearch';
 import { IData } from './useSearch';
 import { Button } from '@/src/components/Button';
 import { RenderSearchItem } from './RenderSearchItem';
+import { useFormHooks } from '@/src/components/Form/useCases';
 
 // const Loading = "Busque.." //` busque profissionais cargos funções estágios; `
 
 export const SearchScreen = () => {
   const { DATA } = useSearch();
-  const { control, handleSubmit } = useForm();
-  const [ filteredData, setFilteredData ] = useState<IData[]>(DATA);
+  const { control, handleSubmit, errors, register } = useFormHooks();
+  const [filteredData, setFilteredData] = useState<IData[]>(DATA);
 
   const filterData = (query: string) => {
     if (query) {
@@ -39,11 +39,11 @@ export const SearchScreen = () => {
       <Container>
         <Form.Root>
           <Form.TextInput
+            //{...register('search')}
             name='search'
             control={control}
-            errorMessage='test Error'
+            errorMessage={errors.search?.message}
             placeholder='search'
-            label='test'
             rules={{
               required: 'Busca requerida!'
             }}
