@@ -1,22 +1,33 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { IUser } from "@/src/types";
 
-const URL = 'http://localhost:4001/authOne';
+const URL = "https://jsonplaceholder.typicode.com/users/1";
 
-const getOne = async (id: string | number, url: string) => {
-    const { data, status } = await axios.get(`${url}/:${id}`);
-    const result = data
-    return result
+const getOne = async (url: string, id: string) => {
+
+    try {
+        const { data } = await axios.get<IUser>(url, {
+            // params: { ID: id}
+        })
+
+        return data
+    } catch (error) {
+        if (error instanceof AxiosError) {
+            console.log(error)
+            throw new Error(error.message)
+        }
+    }
 };
 
-const useAuth = (id?: string |  number) => {
+const useAuth = () => {
     const { data, isLoading, isError } = useQuery({
-        queryKey: ['user', id], // key 
-        queryFn: () => getOne(URL, id = "2"), // get user
+        queryKey: ['user'], // key 
+        queryFn: () => getOne(URL, '12')// get user
     });
-    //console.log(data)
+    // console.log(data)
 
-    return { 
+    return {
         data,
         isLoading,
         isError

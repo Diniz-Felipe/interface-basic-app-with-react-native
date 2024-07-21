@@ -6,7 +6,7 @@ interface ThemeType {
 }
 
 export const Theme = ({ children }: ThemeType) => {
-    return <ThemeProvider theme={theme.darkTheme}>
+    return <ThemeProvider theme={theme.lightTheme}>
         {children}
     </ThemeProvider>
 }

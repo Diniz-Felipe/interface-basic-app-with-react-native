@@ -21,4 +21,4 @@ expo-env.d.ts
 
 # interface
 .gitignore
-app
+src/context/auth/instanceAxios.ts

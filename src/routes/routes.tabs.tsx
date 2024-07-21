@@ -19,8 +19,9 @@ export const TabsRoutes = () => {
     return <Tabs.Navigator
         initialRouteName="Home"
         screenOptions={{
-            tabBarStyle: { 
-                height: 70 
+            tabBarShowLabel: false,
+            tabBarStyle: {
+                height: 70
             },
         }}>
         <Tabs.Screen
@@ -35,9 +36,6 @@ export const TabsRoutes = () => {
                             icon="settings" />
                     </Header.Root>
                 ),
-                tabBarStyle: {
-                    height: 70
-                },
                 tabBarIcon: ({ color, focused }) => (
                     <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
                 ),
