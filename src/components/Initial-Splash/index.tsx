@@ -3,13 +3,13 @@ import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 import { StyleSheet } from 'react-native';
 import { hideAsync } from 'expo-splash-screen';
 
-const VIDEOSPLASH = "../../../assets/videos/mcLaren.mp4";
+const VIDEOSPLASH = "../../../assets/logo.mp4";
 
 export type InitialSplashProps = {
   onComplete: (status: boolean) => void;
 };
 
-export const InitialSplashScreen = ({ onComplete }: InitialSplashProps) => {
+const InitialSplashScreen = ({ onComplete }: InitialSplashProps) => {
   const [lastStatus, setStatus] = useState<AVPlaybackStatus>({} as AVPlaybackStatus);
 
   const onPlaybackStatusUpdate = (status: AVPlaybackStatus) => {
@@ -34,8 +34,8 @@ export const InitialSplashScreen = ({ onComplete }: InitialSplashProps) => {
       onPlaybackStatusUpdate={onPlaybackStatusUpdate}
       isLooping={false} 
       shouldPlay={true}
-      source={require('../../../assets/logo.mp4')} //(VIDEOSPLASH)}
+      source={require(VIDEOSPLASH)} //(VIDEOSPLASH)}
     />
   );
 };
-//`commit -m "add splash initial"`
+export default InitialSplashScreen

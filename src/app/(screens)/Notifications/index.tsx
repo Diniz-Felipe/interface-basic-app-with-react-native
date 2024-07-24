@@ -3,10 +3,12 @@ import { Container } from "./styled";
 import { useNotifications } from "./useNotifications";
 import * as S from "@/src/components/SectionList/styled";
 import { Suspense } from "react";
+import { SignedIn, SignedOut } from "@clerk/clerk-expo";
+import { Text } from "@/src/components/Text";
 
 interface INotifications {};
 
-export const NotificationsScreen = () => {
+const NotificationsScreen = () => {
   const { 
     RenderNotificationsItem, 
     RenderSectionHeader, 
@@ -19,7 +21,8 @@ export const NotificationsScreen = () => {
     <Container>
       <Suspense fallback={<Loading />}>
 
-      {/* condition */}
+      {/* logged */}
+      <SignedIn>
       {
         isNotifications && <SectionList
         sections={DATA}
@@ -28,7 +31,16 @@ export const NotificationsScreen = () => {
         ItemSeparatorComponent={S.ItemSeparatorComponent}
         />
       }
+      </SignedIn>
+
+      {/* not Logged in */}
+      <SignedOut>
+        <Text> {`faça login ou inscreva-se`}</Text>
+      </SignedOut>
+
       </Suspense>
     </Container>
   );
 };
+
+export default NotificationsScreen

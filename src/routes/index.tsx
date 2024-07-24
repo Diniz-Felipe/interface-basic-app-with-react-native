@@ -1,11 +1,14 @@
-//import { NavigationContainer } from "@react-navigation/native";
-import { TabsRoutes } from "../routes/routes.tabs";
+import { Stack } from "expo-router"
 
-export const Routes = () => {
+const Routes = () => {
+  return (
+    <Stack 
+      screenOptions={{ headerShown: false }} 
+    >
+      <Stack.Screen name="(auth)" />
+      <Stack.Screen name="(screens)" /> 
+    </Stack>
+  )
+}
 
-    return (
-        // <NavigationContainer>
-            <TabsRoutes />
-        // <NavigationContainer />
-    );
-};
+export default Routes;

@@ -11,7 +11,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "components/List/ItemSe",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "components/List/ItemSe"  ]
+  ]
 }

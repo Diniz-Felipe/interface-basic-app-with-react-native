@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from '@/src/components/Button';
+import { Ionicons } from "@expo/vector-icons";
 
 interface IIconRight {
     onPress: () => void;
     color: string;
     size: number;
-    icon?: string;
+    icon: keyof typeof Ionicons.glyphMap;
 };
 
 export const HeaderIconRight = ({ onPress, color, size, icon }: IIconRight) => {

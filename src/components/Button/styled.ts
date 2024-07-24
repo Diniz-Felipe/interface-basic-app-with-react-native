@@ -13,5 +13,6 @@ export const Touchable = styled.TouchableOpacity`
         background-color: ${({theme}) => theme.colors.secundary};
         border-radius: 10px;
         padding: ${({ theme }) => theme.spaces.small}px;
+        gap: 10px;
     `}
 `;
