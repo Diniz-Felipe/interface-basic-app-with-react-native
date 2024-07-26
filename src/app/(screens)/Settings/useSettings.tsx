@@ -2,6 +2,7 @@ import React from 'react';
 import { Text } from '@/src/components/Text';
 import { ListItem } from '@/src/components/ListItem';
 import { ISectionsData } from '@/src/components/SectionList';
+import { useSheetBottom } from '@/src/components/Modal/SheetBottom';
 
 export interface DataProps extends ISectionsData {};
 
@@ -28,12 +29,15 @@ const RenderSectionHeader = (section: DataProps) => <Text medium>{section.title}
 
 const handleNextSettings = () => {};
 
-const RenderSettingsItem = (item: DataProps) => (
-  <ListItem.Root action={handleNextSettings}>
-    <ListItem.Content text={item} />
-  </ListItem.Root>
-);
-
 export const useSettings = () => {
+
+  const { handleOpenPress } = useSheetBottom();
+
+  const RenderSettingsItem = (item: DataProps) => (
+    <ListItem.Root action={handleOpenPress}>
+      <ListItem.Content text={item} />
+    </ListItem.Root>
+  );
+  
   return {RenderSettingsItem, RenderSectionHeader, DATA}
 };

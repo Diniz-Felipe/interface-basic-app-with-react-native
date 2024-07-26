@@ -9,6 +9,7 @@ import { SheetIcon } from '@/src/components/Modal/SheetIcon';
 import { SheetActions } from '@/src/components/Modal/SheetActions';
 import { SheetPortal } from '@/src/components/Modal/SheetPortal';
 import { SheetModal } from '@/src/components/Modal/SheetModal';
+import { SheetBottom } from '@/src/components/Modal/SheetBottom';
 
 export const ModalSheet = {
   Root: SheetRoot,
@@ -20,6 +21,7 @@ export const ModalSheet = {
   Actions: SheetActions,
   Modal: SheetModal,
   Portal: SheetPortal,
+  Bottom: SheetBottom,
   // TimeLine: SheetTimeLine
   // Check: SheetCheck
   // etc.
